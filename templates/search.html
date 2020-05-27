@@ -1,0 +1,121 @@
+<html>
+<head>
+<style type="text/css">
+
+select {
+            width: 55%;
+            height:45px;
+            padding: 10px 15px;
+            border: 1px solid #3b5998;
+            border-radius: 2px;
+            background-color: #fafafa;
+            font-size:15px;
+         }
+.search-container{
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+input{
+  background-color: #fafafa;
+  padding: 10px;
+}
+input#search-bar{
+  margin: 0 auto;
+  width: 200%;
+  height: 45px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none;
+  &:focus{
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease; 
+  	 opacity: 0;
+     }    
+   }
+ }
+
+.second_object {
+    margin-left:-20px;
+    float: right;
+}
+.search-icon{
+  position: relative;
+  float: right;
+  width: 75px;
+  height: 75px;
+  top: -62px;
+  right: -55px;
+}
+.upper_box{
+  border:3px solid #3b5998;
+  padding:10px 100px;
+  width:200%;
+  margin-left:-350px;
+}
+input[type="submit"]{
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+*{transition:all 0.3s ease-in-out;}
+
+.container{
+  clear:both;
+  overflow:auto;
+  color:white;
+}
+
+nav{float:right;}
+
+.logo img{float:left;}
+
+</style>
+</head>
+<body>
+  <div class="container">
+<div class="" style="margin-top:-35px;">
+  <h4 style="background-color:brown;padding:15px;height:60px;font-size:18px;padding-top:40px;" align="center">STACKHACK 1.0 | Online Hackathon Event Registration Platform</h4>
+</div>
+</div>
+  <form class="search-container" method="post" action="{{ url_for('card_details') }}" >
+    <div class="upper_box">
+      <p align="center" style="font-size:26px;"><strong>CHECK YOUR ID HERE</strong></p>
+      <hr/>
+      <br/>
+      <div class="first_object">
+        <select name="search_object" id="search_object"style="margin-left:-40px;margin-top: -5px;" required>Search By:
+          <option value="0">Registration Id</option>
+          <option value="1">Mail-ID</option>
+          <option value="2">Mobile Number</option>
+        </select>
+      <div>
+      <div class="second_object" style="margin-top:-45px;margin-right:180px;">
+        <input required type="text" id="search-bar" name="search_bar" placeholder="Corresponding Value">
+      </div>
+      <br/>
+      <input type="submit" value="CHECK MY ID" style="padding:10px;margin-left:50%;font-size:14px;" align="center"/>
+    </div>
+  </form>
+
+</body>
+</html>
